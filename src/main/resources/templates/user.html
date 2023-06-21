@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>User</title>
+</head>
+<body>
+<h1>Information</h1>
+<h3>Username: <th:block th:text="${user.username}"></th:block></h3>
+<h3>Email: <th:block th:text="${user.email}"></th:block></h3>
+<h3>Roles:</h3>
+<th:block th:each="role : ${user.roles}">
+    <h3 th:text="${role.name}"></h3>
+</th:block>
+<div th:replace="logoutFragment :: logout"></div>
+</body>
+</html>
